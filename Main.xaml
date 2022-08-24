@@ -543,9 +543,15 @@
               </If>
               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke InitiAllApplications workflow" sap:VirtualizedContainerService.HintSize="484,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Framework\InitAllApplications.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_CareerPageLink">[Config("CareerPageLink").ToString]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_JobListingExcelPath">[Config("JobListingExcelPath").ToString]</InArgument>
+                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                    <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_CareerPageLink">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;CareerPageLink&quot;).ToString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_JobListingExcelPath">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;JobListingExcelPath&quot;).ToString" />
+                  </InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
             </Sequence>
